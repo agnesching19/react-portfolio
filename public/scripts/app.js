@@ -1,29 +1,41 @@
 'use strict';
 
-function square(x) {
-  return x * x;
+var add = function add(a, b) {
+  return a + b;
 };
 
-console.log(square(3));
+console.log(add(55, 1));
 
-// const squareArrow = (x) => {
-//   return x * x;
-// };
+// this keywprd - no longer bound
 
-var squareArrow = function squareArrow(x) {
-  return x * x;
+var user = {
+  name: 'Agnes',
+  cities: ['London', 'Brussels', 'Taipei'],
+
+  printPlaceLived: function printPlaceLived() {
+    var _this = this;
+
+    return this.cities.map(function (city) {
+      return _this.name + ' has lived in ' + city;
+    });
+  }
 };
 
-console.log(squareArrow(10));
+console.log(user.printPlaceLived());
 
-// Challenge of this video
+// Challenge below
 
-// const getFirstName = (y) => {
-//   return y.split(' ')[0];
-// };
+var multiplier = {
+  numbers: [10, 20, 30],
+  multiplyBy: 3,
 
-var getFirstName = function getFirstName(y) {
-  return y.split(' ')[0];
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return number * _this2.multiplyBy;
+    });
+  }
 };
 
-console.log(getFirstName('Agnes Ching'));
+console.log(multiplier.multiply());

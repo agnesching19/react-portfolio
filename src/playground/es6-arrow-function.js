@@ -12,7 +12,7 @@ const squareArrow = (x) => x * x;
 
 console.log(squareArrow(10));
 
-// Challenge of this video
+// Challenge below
 
 // const getFirstName = (y) => {
 //   return y.split(' ')[0];
