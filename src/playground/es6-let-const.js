@@ -1,31 +1,29 @@
-'use strict';
-
 var nameVar = 'Agnes';
 var nameVar = 'Simon';
 console.log('nameVar', nameVar);
 
-var nameLet = 'Bob';
+let nameLet = 'Bob';
 nameLet = 'Kevin';
 console.log('nameLet', nameLet);
 
-var nameConst = 'Frank';
+const nameConst = 'Frank';
 console.log('nameConst', nameConst);
 
 function getPetName() {
-  var petName = 'Doggie';
+  const petName = 'Doggie';
   return petName;
 }
 
-var petName = getPetName();
+const petName = getPetName();
 console.log(petName);
 
 // Block scoping
 
-var fullName = 'Agnes Ching';
-var firstName;
+const fullName = 'Agnes Ching';
+let firstName;
 
 if (fullName) {
-  var fistName = fullName.split(' ')[0];
+  let fistName = fullName.split(' ')[0];
   console.log(fistName);
 }
 
