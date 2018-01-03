@@ -1,5 +1,3 @@
-'use strict';
-
 function square(x) {
   return x * x;
 };
@@ -10,9 +8,7 @@ console.log(square(3));
 //   return x * x;
 // };
 
-var squareArrow = function squareArrow(x) {
-  return x * x;
-};
+const squareArrow = (x) => x * x;
 
 console.log(squareArrow(10));
 
@@ -22,8 +18,6 @@ console.log(squareArrow(10));
 //   return y.split(' ')[0];
 // };
 
-var getFirstName = function getFirstName(y) {
-  return y.split(' ')[0];
-};
+const getFirstName = (y) => y.split(' ')[0];
 
 console.log(getFirstName('Agnes Ching'));
