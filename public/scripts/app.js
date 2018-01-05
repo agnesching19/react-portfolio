@@ -1,41 +1,91 @@
 'use strict';
 
-var add = function add(a, b) {
-  return a + b;
+console.log('App.js is running!');
+
+// JSX - JavaScript XML
+
+var app = {
+  title: 'Indecision App',
+  subtitle: 'All you need is code!',
+  options: ['One', 'Two']
 };
 
-console.log(add(55, 1));
+var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  app.subtitle && React.createElement(
+    'p',
+    null,
+    app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? 'Here are your options' : 'No options'
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'Item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'Item two'
+    )
+  )
+);
 
-// this keywprd - no longer bound
+var count = 0;
 
-var user = {
-  name: 'Agnes',
-  cities: ['London', 'Brussels', 'Taipei'],
-
-  printPlaceLived: function printPlaceLived() {
-    var _this = this;
-
-    return this.cities.map(function (city) {
-      return _this.name + ' has lived in ' + city;
-    });
-  }
+var addOne = function addOne() {
+  console.log('addOne');
 };
 
-console.log(user.printPlaceLived());
-
-// Challenge below
-
-var multiplier = {
-  numbers: [10, 20, 30],
-  multiplyBy: 3,
-
-  multiply: function multiply() {
-    var _this2 = this;
-
-    return this.numbers.map(function (number) {
-      return number * _this2.multiplyBy;
-    });
-  }
+var minusOne = function minusOne() {
+  console.log('minusOne');
 };
 
-console.log(multiplier.multiply());
+var reset = function reset() {
+  console.log('reset');
+};
+
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Count: ',
+    count
+  ),
+  React.createElement(
+    'button',
+    { onClick: addOne },
+    '+1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: minusOne },
+    '-1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: reset },
+    'reset'
+  )
+);
+
+console.log(templateTwo);
+
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);
