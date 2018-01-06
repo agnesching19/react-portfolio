@@ -1,30 +1,62 @@
-console.log("I'm a visible app!")
+class VisibilityToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+    this.state = {
+      visibility: false
+    };
+  }
+  handleToggleVisibility() {
+    this.setState((prevState) => {
+      return {
+        visibility: !prevState.visibility
+      }
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={this.handleToggleVisibility}>
+          {this.state.visibility ? "Hide details" : "Show details"}
+        </button>
+        {this.state.visibility && (
+          <div>
+            <p>Heya, there are some details you can see now!</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
-let visibility = false;
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
 
-const appTest = document.getElementById('app');
+// let visibility = false;
 
-const onToggle = () => {
-  visibility = !visibility;
-  render();
-};
+// const appTest = document.getElementById('app');
 
-const render = () => {
-  const jsx = (
-    <div>
-      <h1>Visibility Toggle</h1>
-      <button onClick={onToggle}>
-        {visibility ? "Hide details" : "Show details"}
-      </button>
-      {visibility && (
-        <div>
-          <p>Heya, there are some details you can see now!</p>
-        </div>
-      )}
-    </div>
-  );
+// const onToggle = () => {
+//   visibility = !visibility;
+//   render();
+// };
 
-  ReactDOM.render(jsx, appTest);
-};
+// const render = () => {
+//   const jsx = (
+//     <div>
+//       <h1>Visibility Toggle</h1>
+//       <button onClick={onToggle}>
+//         {visibility ? "Hide details" : "Show details"}
+//       </button>
+//       {visibility && (
+//         <div>
+//           <p>Heya, there are some details you can see now!</p>
+//         </div>
+//       )}
+//     </div>
+//   );
 
-render();
+//   ReactDOM.render(jsx, appTest);
+// };
+
+// render();
