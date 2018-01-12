@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const template = React.createElement('p', {}, 'bello bello');
+const template = <p>this is a silly question</p>;
 ReactDom.render(template, document.getElementById('app'));
 
 // import './utils.js';
