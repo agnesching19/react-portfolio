@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:agnesching19/indecision-app.git",
-  "author": "Agnes Ching",
+  "author": "Agnes Ching <agnesching19@gmail.com>",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
