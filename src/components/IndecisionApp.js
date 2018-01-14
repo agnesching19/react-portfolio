@@ -38,23 +38,25 @@ export default class IndecisionApp extends React.Component {
     this.setState((prevState) => ({ options: prevState.options.concat(option) }));
   };
   render() {
-    const subtitle = 'All you need is code';
+    const subtitle = '[Noted] All you need is code';
 
     return (
       <div>
         <Header subtitle={subtitle}/>
-        <Action
-          hasOptions={this.state.options.length > 0}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption
-          handleAddOption={this.handleAddOption}
-        />
+        <div className='container'>
+          <Action
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
+          />
+          <Options
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+            handleDeleteOption={this.handleDeleteOption}
+          />
+          <AddOption
+            handleAddOption={this.handleAddOption}
+          />
+        </div>
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
