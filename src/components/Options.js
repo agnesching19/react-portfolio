@@ -16,13 +16,17 @@ import Option from './Option.js';
 
 const Options = (props) => (
   <div>
-    <button
-      onClick={props.handleDeleteOptions}
-      className="button button--link"
-    >
-      Remove All
-    </button>
-    {props.options.length === 0 && <p>Please add an option to get started!</p>}
+    <div className='widget-header'>
+      <h3 className='widger-header__title'>Your Options</h3>
+      <button
+        onClick={props.handleDeleteOptions}
+        className="button button--link"
+      >
+        Remove All
+      </button>
+    </div>
+
+    {props.options.length === 0 && <p className='widget__message'>Please add an option to get started!</p>}
     {
       props.options.map((option) => (
         <Option
