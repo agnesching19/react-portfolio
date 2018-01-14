@@ -38,7 +38,7 @@ export default class IndecisionApp extends React.Component {
     this.setState((prevState) => ({ options: prevState.options.concat(option) }));
   };
   render() {
-    const subtitle = '[Noted] All you need is code';
+    const subtitle = '[hint] All you need is code';
 
     return (
       <div>
